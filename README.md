@@ -1,40 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 📰 TechScope
+**개발자들을 위한 최신 기술 뉴스 큐레이션 플랫폼**
 
-## Getting Started
+여러 기술 블로그/뉴스 API를 통합하여  
+프론트엔드, 백엔드, AI 등 다양한 분야의 트렌드를 **카테고리별로 확인**할 수 있는 웹앱입니다.
 
-First, run the development server:
+---
+
+## ✅ 주요 기능
+
+- **카테고리별 뉴스 보기**  
+  WebDev, AI, Cloud, Design 등 주요 기술 카테고리를 선택해 필터링
+
+- **무한 스크롤 기능**  
+  `React Query`의 `useInfiniteQuery`를 활용해 페이지네이션 없이 뉴스 로딩
+
+- **검색 기능**  
+  키워드 입력 시 관련 뉴스 필터링 가능
+
+- **뉴스 상세 보기**  
+  뉴스 카드 클릭 시 `/news/[id]`로 이동하여 전체 뉴스 확인
+
+---
+
+## 🛠 사용 기술 스택
+
+| 범주         | 기술 스택                            |
+|--------------|---------------------------------------|
+| 프레임워크   | Next.js 15 (`app` 디렉토리 기반)     |
+| 스타일링     | Tailwind CSS                         |
+| 데이터 페칭 | React Query (`@tanstack/react-query`) |
+| API          | Dev.to API (기술 블로그 기사 제공)   |
+| 상태 관리    | React `useState`, `useEffect`         |
+| 배포         | Vercel                                |
+
+---
+
+## 📁 폴더 구조
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+/src
+┣ app/
+┃ ┣ page.js             # 홈 페이지
+┃ ┣ news/[id]/page.js   # 뉴스 상세 페이지
+┣ components/           # UI 컴포넌트 모음
+┣ lib/
+┃ ┗ api.js              # 뉴스 Fetch 함수 정의
+┣ styles/               # Tailwind 설정 및 글로벌 스타일
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 📌 향후 확장 아이디어 (미구현 기능)
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- **북마크 수 기반 정렬**  
+  (Dev.to API에서 제공되지 않아 미구현)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+- **모달 상세 보기**  
+  현재는 별도의 상세 페이지(`/news/[id]`)로 이동하는 방식 사용
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **PWA 적용 및 오프라인 기능**  
+  향후 Next PWA 플러그인 등을 통해 적용 가능
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📷 데모
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+> **배포 링크:** [https://techscope.vercel.app](https://techscope.vercel.app)  
+> (※ 실제 배포 여부에 따라 링크 확인 필요)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🙋 프로젝트 회고
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+이번 프로젝트에서는 기술 트렌드 콘텐츠를 수집하고 분류하는 기능에 집중했으며,  
+다음과 같은 기술을 직접 다뤄보는 경험을 쌓았습니다:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- Dev.to API를 활용한 실시간 콘텐츠 연동  
+- 무한 스크롤 및 데이터 캐싱 처리 (React Query)  
+- 카테고리 필터링 및 검색 기능 구현  
+- Next.js 15 기반 디렉토리 구조와 라우팅 경험
