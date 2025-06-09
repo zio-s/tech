@@ -1,4 +1,5 @@
 # 📰 TechScope
+
 **개발자들을 위한 최신 기술 뉴스 큐레이션 플랫폼**
 
 여러 기술 블로그/뉴스 API를 통합하여  
@@ -24,14 +25,14 @@
 
 ## 🛠 사용 기술 스택
 
-| 범주         | 기술 스택                            |
-|--------------|---------------------------------------|
-| 프레임워크   | Next.js 15 (`app` 디렉토리 기반)     |
-| 스타일링     | Tailwind CSS                         |
+| 범주        | 기술 스택                             |
+| ----------- | ------------------------------------- |
+| 프레임워크  | Next.js 15 (`app` 디렉토리 기반)      |
+| 스타일링    | Tailwind CSS                          |
 | 데이터 페칭 | React Query (`@tanstack/react-query`) |
-| API          | Dev.to API (기술 블로그 기사 제공)   |
-| 상태 관리    | React `useState`, `useEffect`         |
-| 배포         | Vercel                                |
+| API         | Dev.to API (기술 블로그 기사 제공)    |
+| 상태 관리   | React `useState`, `useEffect`         |
+| 배포        | Vercel                                |
 
 ---
 
@@ -65,7 +66,7 @@
 
 ## 📷 데모
 
-> **배포 링크:** [https://techscope.vercel.app](https://techscope.vercel.app)  
+> **배포 링크:** [https://tech-nine-rust.vercel.app/](https://tech-nine-rust.vercel.app/)  
 > (※ 실제 배포 여부에 따라 링크 확인 필요)
 
 ---
@@ -75,7 +76,7 @@
 이번 프로젝트에서는 기술 트렌드 콘텐츠를 수집하고 분류하는 기능에 집중했으며,  
 다음과 같은 기술을 직접 다뤄보는 경험을 쌓았습니다:
 
-- Dev.to API를 활용한 실시간 콘텐츠 연동  
-- 무한 스크롤 및 데이터 캐싱 처리 (React Query)  
-- 카테고리 필터링 및 검색 기능 구현  
+- Dev.to API를 활용한 실시간 콘텐츠 연동
+- 무한 스크롤 및 데이터 캐싱 처리 (React Query)
+- 카테고리 필터링 및 검색 기능 구현
 - Next.js 15 기반 디렉토리 구조와 라우팅 경험
