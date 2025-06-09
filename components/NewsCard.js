@@ -1,21 +1,23 @@
+// components/NewsCard.js
+
+import Image from 'next/image';
+import Link from 'next/link';
+
 export default function NewsCard({ article }) {
-  const { title, description, image, publishedAt, source, url } = article;
+  const imageUrl = article.cover_image || '/default-image.png';
 
   return (
-    <a
-      href={url}
-      target='_blank'
-      rel='noopener noreferrer'
-      className='block border border-gray-200 dark:border-neutral-700 rounded-xl overflow-hidden hover:shadow-md transition'
-    >
-      {image && <img src={image} alt={title} className='w-full h-48 object-cover' />}
-      <div className='p-4'>
-        <h2 className='font-semibold text-lg mb-2 line-clamp-2'>{title}</h2>
-        <p className='text-sm text-gray-600 dark:text-gray-400 line-clamp-3'>{description}</p>
-        <div className='mt-2 text-xs text-gray-500'>
-          {source.name} · {new Date(publishedAt).toLocaleDateString()}
-        </div>
-      </div>
-    </a>
+    <Link href={`/news/${article.id}`} className='block border rounded p-4 '>
+      <Image
+        src={imageUrl}
+        alt={article.title}
+        width={600}
+        height={300}
+        className='w-full h-48 object-cover mb-4 rounded'
+      />
+
+      <h2 className='text-xl font-semibold'>{article.title}</h2>
+      <p className='text-sm text-gray-500 mt-1'>{article.description}</p>
+    </Link>
   );
 }
